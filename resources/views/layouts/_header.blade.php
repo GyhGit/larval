@@ -17,6 +17,7 @@
                 <li class="active">
                     <a href="#">帮助 <span class="sr-only">(current)</span></a>
                 </li>
+
                 <li>
                     <a href="#">牛掰关于</a>
                 </li>
@@ -43,6 +44,13 @@
                             <a href="#">牛掰</a>
                         </li>
                     </ul>
+                </li>
+
+                <li class="dl-horizontal">
+                    <a href="{{route("user.reg")}}">用户注册 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="dl-horizontal">
+                    <a href="{{route("user.index")}}">用户列表 <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
 

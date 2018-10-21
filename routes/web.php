@@ -35,3 +35,10 @@ Route::any("goods/add","GoodsController@add")->name('goods.add');
 Route::any("goods/edit/{id}","GoodsController@edit")->name('goods.edit');
 Route::get("goods/del/{id}","GoodsController@del")->name('goods.del');
 Route::get("goods/gd/{id}","GoodsController@gd")->name('goods.gd');
+
+//注册
+Route::any("user/reg","UserController@reg")->name('user.reg');
+//用户列表
+Route::get("user/index","UserController@index")->name('user.index');
+Route::any("user/edit/{id}","UserController@edit")->name('user.edit');
+Route::get("user/del/{id}","UserController@del")->name('user.del');

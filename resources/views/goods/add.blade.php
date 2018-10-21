@@ -1,7 +1,7 @@
 @extends("layouts.main")
 @section("content")
 
-    <form class="form-inline"  method="post">
+    <form class="form-inline"  method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
             <label for="name">商品名称</label>
@@ -32,6 +32,22 @@
             <label for="details">是否上架</label>
             <input type="radio" name="is_on_sale" value="1">上架
             <input type="radio" name="is_on_sale" value="0">未上架
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label  class="col-sm-2 control-label">个性头像</label>
+            <div class="col-sm-10">
+                <input type="file" class="" name="img">
+
+            </div>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label  class="col-sm-2 control-label">验证码</label>
+            <div class="col-sm-10">
+                <input id="captcha" class="form-control" name="captcha"  placeholder="请输入验证码">
+                <img class="thumbnail captcha" src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
+            </div>
         </div>
         <br><br>
         <button type="submit" class="btn btn-default">添加</button>

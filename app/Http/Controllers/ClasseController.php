@@ -33,7 +33,7 @@ class ClasseController extends Controller
                 return redirect("/classe/index");
             }
         }
-        return view("classe.edit",compact('classe'));
+        return view("goods.edit", compact("goods", "rows"));
     }
     //删除
     public function del($id)
