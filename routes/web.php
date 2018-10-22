@@ -42,3 +42,7 @@ Route::any("user/reg","UserController@reg")->name('user.reg');
 Route::get("user/index","UserController@index")->name('user.index');
 Route::any("user/edit/{id}","UserController@edit")->name('user.edit');
 Route::get("user/del/{id}","UserController@del")->name('user.del');
+
+Route::any("user/login","UserController@login")->name('user.login');
+Route::any("user/logout","UserController@logout")->name('user.logout');
+

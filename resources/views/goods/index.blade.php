@@ -57,6 +57,7 @@
             </td>
             <td><img src="/{{$goods->logo}}" width="50" alt=""></td>
 
+
             <td>
                 <a href="{{route("goods.gd",$goods->id)}}" class="btn btn-success">更多</a>
                 <a href="{{route("goods.edit",$goods->id)}}" class="btn btn-success">编辑</a>
@@ -68,7 +69,8 @@
 
 
     </table>
-{{$goodss->links()}}
+{{--{{$goodss->links()}}--}}
+    {{$goodss->appends($url)->links()}}
 
 
 @endsection

@@ -14,6 +14,9 @@ class GoodsController extends Controller
     public function index(Request $request)
     {
 
+        $url=$request->query();
+
+
 
         //接收
         $cateId = $request->get("cate_id");
@@ -44,7 +47,7 @@ class GoodsController extends Controller
         }
         $goodss = $query->paginate(2);
         $cate = Category::all();
-        return view("/goods/index", compact("goodss", "cate"));
+        return view("/goods/index", compact("goodss", "cate","url"));
     }
 
     //添加
@@ -76,7 +79,7 @@ class GoodsController extends Controller
             $data['logo']=$request->file("img")->store("images","image");
 
             //判断是否上传了图片
-           
+
             $goods->update($data);
                 return  redirect("/goods/index");
 

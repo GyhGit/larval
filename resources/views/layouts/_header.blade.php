@@ -52,26 +52,54 @@
                 <li class="dl-horizontal">
                     <a href="{{route("user.index")}}">用户列表 <span class="sr-only">(current)</span></a>
                 </li>
+                {{--<li class="dl-horizontal">--}}
+                    {{--<a href="{{route("user.login")}}">用户登录 <span class="sr-only">(current)</span></a>--}}
+                {{--</li>--}}
             </ul>
+
+            @auth
+                <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{\Illuminate\Support\Facades\Auth::guard("web")->user()->name}} <span class="right"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">修改资料</a></li>
+
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{{route("user.logout")}}">退出登录</a></li>
+                    </ul>
+                </li>
+                    </ul>
+
+            @endauth
+
+            @guest   
+
+
 
             <ul class="nav navbar-nav navbar-right">
                 <img src="" alt="" id="img" width="50">
                 <li id="login-li">
-                    <a href="#" data-toggle="modal" data-target="#login-modal">登录</a>
+                    <a href="{{route("user.login")}}" data-toggle="modal">登录</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人详情 <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">个人资料</a>
-                        </li>
-                        <li>
-                            <a href="#">退出登录</a>
-                        </li>
-
-                    </ul>
+                <li id="login-li">
+                    <a href="{{route("user.reg")}}" data-toggle="modal">注册</a>
                 </li>
             </ul>
+            @endguest
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <!-- /.navbar-collapse -->
     </div>

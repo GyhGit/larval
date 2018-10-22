@@ -21,8 +21,8 @@
 {{--导航条--}}
 @include("layouts._header")
 <div class="container-fluid">
-{{--    @include("layouts._error")--}}
-    {{--@include("layouts._msg")--}}
+    @include("layouts._error")
+    @include("layouts._msg")
     {{--内容占位--}}
     @yield("content")
 
